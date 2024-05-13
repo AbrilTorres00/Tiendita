@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<style>
+    body{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        background-color:  burlywood;
+        margin: 0;
+        padding: 20px;
+        color: black;
+    }
+    h1{
+        text-align: center;
+        color: rgb(0, 0, 0);
+        text-shadow: 5px 5px 5px rgb(253, 249, 249);
+    }
+    form, #resumenpedido{
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px #666;
+        margin-top: 20px;
+        padding: 10px;
+    }
+    </style>
+<h1>Resumen del Pedido</h1>
+    <div id="resumenpedido"></div>
+    <script>
+        window.onload = function(){
+            const params = new URLSearchParams(window.location.search);
+            const resumenpedido = document.getElementById('resumenpedido');
+            for (const [key,value] of params.entries()){
+                const detail = document.createElement('p');
+                detail.textContent =`${key}: ${value}`;
+                resumenpedido.appendChild(detail);
+            }
+        };
+    </script>
+</body>
+</html>
